@@ -1,0 +1,48 @@
+# docs.serverless.com
+service: cia-lambda
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-west-2
+
+functions:
+  client:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /api/data/client
+          method: any
+          cors: true
+
+  company:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /api/data/company
+          method: any
+          cors: true
+
+  settings:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /api/data/settings
+          method: any
+          cors: true
+
+  version:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /v1/version
+          method: get
+          cors: true
+
+  echo:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /v1/echo
+          method: post
+          cors: true
