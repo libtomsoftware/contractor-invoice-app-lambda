@@ -9,12 +9,12 @@ module.exports = {
     });
   },
   client: () => {
-    return ClientModel.find({
+    return ClientModel.findOne({
       _id: "client"
     });
   },
   company: () => {
-    return CompanyModel.find({
+    return CompanyModel.findOne({
       _id: "company"
     });
   }
