@@ -1,9 +1,10 @@
 const queries = require("../../data/queries");
+const responder = require("../../responder");
 
 async function get(req, res) {
   const company = await queries.company();
 
-  res.send(company);
+  responder.send(res, req.headers.origin, company, 200);
 }
 
 async function update(req, res) {
@@ -11,7 +12,7 @@ async function update(req, res) {
 
   const company = await queries.company();
 
-  res.send(company);
+  responder.send(res, req.headers.origin, company, 200);
 }
 
 module.exports = {

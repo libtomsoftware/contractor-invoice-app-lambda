@@ -1,10 +1,6 @@
 const CONFIG = require("./config");
 const STATUS_CODE = CONFIG.CONSTANTS.HTTP_CODE;
-const allowedOrigins = [
-  "http://footy.local:3000",
-  "http://localhost:3000",
-  "http://localhost:3001"
-];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
 
 function addHeaders(response, origin) {
   response.headers = {

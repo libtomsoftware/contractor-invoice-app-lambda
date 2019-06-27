@@ -1,9 +1,10 @@
 const queries = require("../../data/queries");
+const responder = require("../../responder");
 
 async function get(req, res) {
   const settings = await queries.settings();
 
-  res.send(settings);
+  responder.send(res, req.headers.origin, settings, 200);
 }
 
 async function update(req, res) {
@@ -11,7 +12,7 @@ async function update(req, res) {
 
   const settings = await queries.settings();
 
-  res.send(settings);
+  responder.send(res, req.headers.origin, settings, 200);
 }
 
 module.exports = {
