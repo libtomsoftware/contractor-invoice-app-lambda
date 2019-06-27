@@ -6,6 +6,7 @@ function addHeaders(response, origin) {
   response.headers = {
     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type,Authorization",
+    "Content-Type": "application/json",
     "Access-Control-Allow-Credentials": "true"
   };
 
@@ -88,6 +89,7 @@ class Responder {
     addHeaders(response, origin);
 
     console.warn("data", typeof data, data);
+    console.warn("response.headers", response.headers);
 
     response.send(data);
   }

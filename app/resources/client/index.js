@@ -6,8 +6,6 @@ async function get(req, res) {
   const client = await queries.client();
 
   responder.send(res, req.headers.origin, client, 200);
-
-  res.send(client);
 }
 
 async function update(req, res) {
