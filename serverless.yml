@@ -30,19 +30,3 @@ functions:
           path: /api/data/settings
           method: any
           cors: true
-
-  version:
-    handler: lambda.handler
-    events:
-      - http:
-          path: /v1/version
-          method: get
-          cors: true
-
-  echo:
-    handler: lambda.handler
-    events:
-      - http:
-          path: /v1/echo
-          method: post
-          cors: true
