@@ -1,6 +1,7 @@
 const SettingsModel = require("./models/settings");
 const ClientModel = require("./models/client");
 const CompanyModel = require("./models/company");
+const InvoiceModel = require("./models/invoice");
 
 module.exports = {
   updateSettings: ({ currency, greetings, price, vatPercentage, weekly }) => {
@@ -49,5 +50,13 @@ module.exports = {
       paymentDetails,
       representative
     });
+  },
+  addInvoice: invoiceData => {
+    const invoice = new InvoiceModel({
+      _id: `invoice-${new Date().getTime()}`,
+      ...invoiceData
+    });
+
+    return invoice.save();
   }
 };

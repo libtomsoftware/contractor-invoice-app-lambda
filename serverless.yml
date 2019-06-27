@@ -30,3 +30,19 @@ functions:
           path: /api/data/settings
           method: any
           cors: true
+
+  invoices:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /api/data/invoices
+          method: get
+          cors: true
+
+  invoice:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /api/data/invoice
+          method: any
+          cors: true

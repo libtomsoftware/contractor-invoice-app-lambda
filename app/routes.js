@@ -3,7 +3,8 @@ const responder = require("./responder");
 const resources = {
   settings: require("./resources/settings"),
   client: require("./resources/client"),
-  company: require("./resources/company")
+  company: require("./resources/company"),
+  invoices: require("./resources/invoices")
 };
 
 module.exports = function routes() {
@@ -15,6 +16,9 @@ module.exports = function routes() {
   routes.post("/api/data/client", resources.client.update);
   routes.get("/api/data/company", resources.company.get);
   routes.post("/api/data/company", resources.company.update);
+
+  routes.get("/api/data/invoices", resources.invoices.get);
+  routes.put("/api/data/invoice", resources.invoices.add);
 
   routes.all("*", (req, res) => responder.rejectNotFound(res));
 

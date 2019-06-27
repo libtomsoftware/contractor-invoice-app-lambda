@@ -1,6 +1,7 @@
 const SettingsModel = require("./models/settings");
 const ClientModel = require("./models/client");
 const CompanyModel = require("./models/client");
+const InvoiceModel = require("./models/invoice");
 
 module.exports = {
   settings: () => {
@@ -17,5 +18,8 @@ module.exports = {
     return CompanyModel.findOne({
       _id: "company"
     });
+  },
+  invoices: () => {
+    return InvoiceModel.find({});
   }
 };
