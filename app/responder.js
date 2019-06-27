@@ -87,6 +87,8 @@ class Responder {
 
     addHeaders(response, origin);
 
+    console.warn("data", typeof data, data);
+
     response.send(data);
   }
 }
