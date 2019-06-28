@@ -43,6 +43,10 @@ functions:
     handler: lambda.handler
     events:
       - http:
-          path: /api/data/invoice
-          method: any
+          path: /api/data/invoice/{id}
+          method: delete
           cors: true
+          request:
+            parameters:
+              paths:
+                id: true

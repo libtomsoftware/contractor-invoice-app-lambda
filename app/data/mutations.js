@@ -58,5 +58,10 @@ module.exports = {
     });
 
     return invoice.save();
+  },
+  removeInvoice: id => {
+    return InvoiceModel.deleteOne({
+      _id: id
+    });
   }
 };

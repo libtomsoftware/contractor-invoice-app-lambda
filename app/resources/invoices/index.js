@@ -15,7 +15,20 @@ async function add(req, res) {
   responder.send(res, req.headers.origin, invoices, 200);
 }
 
+async function remove(req, res) {
+  const { id } = req.params;
+
+  if (id) {
+    await mutations.removeInvoice(id);
+  }
+
+  const invoices = await queries.invoices();
+
+  responder.send(res, req.headers.origin, invoices, 200);
+}
+
 module.exports = {
   get,
-  add
+  add,
+  remove
 };

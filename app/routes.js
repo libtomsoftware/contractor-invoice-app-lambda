@@ -19,6 +19,7 @@ module.exports = function routes() {
 
   routes.get("/api/data/invoices", resources.invoices.get);
   routes.put("/api/data/invoice", resources.invoices.add);
+  routes.delete("/api/data/invoice/:id", resources.invoices.remove);
 
   routes.all("*", (req, res) => responder.rejectNotFound(res));
 
