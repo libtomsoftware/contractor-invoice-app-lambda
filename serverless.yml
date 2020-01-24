@@ -31,6 +31,14 @@ functions:
           method: any
           cors: true
 
+  services:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /api/data/services
+          method: any
+          cors: true
+
   invoices:
     handler: lambda.handler
     events:
