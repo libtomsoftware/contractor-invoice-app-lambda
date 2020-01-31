@@ -3,7 +3,7 @@ service: cia-lambda
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs12.0
   region: eu-west-2
 
 functions:
