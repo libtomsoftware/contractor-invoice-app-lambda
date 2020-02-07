@@ -58,3 +58,15 @@ functions:
             parameters:
               paths:
                 id: true
+
+  invoice:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /api/data/invoice
+          method: put
+          cors: true
+          request:
+            parameters:
+              paths:
+                id: true
