@@ -17,11 +17,12 @@ const invoiceSchema = new Schema(
       reg: String,
       vat: String,
       paymentDetails: {
-        internationalBankNumber: String,
         bankName: String,
         sortCode: String,
         accountNumber: String,
-        accountName: String
+        accountName: String,
+        internationalBankNumber: String,
+        swift: String
       },
       representative: {
         name: String,
