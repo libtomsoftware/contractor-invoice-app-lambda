@@ -39,7 +39,11 @@ const invoiceSchema = new Schema(
         description: String,
         price: Number,
         quantity: Number,
-        discountPercentage: Number
+        discountPercentage: Number,
+        currency: {
+          symbol: String,
+          symbolInFront: Boolean
+        }
       }
     ]
   },
