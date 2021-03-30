@@ -12,7 +12,7 @@ const companySchema = new Schema(
     reg: String,
     vat: String,
     paymentDetails: {
-      paymentMethod: String,
+      internationalBankNumber: String,
       bankName: String,
       sortCode: String,
       accountNumber: String,
