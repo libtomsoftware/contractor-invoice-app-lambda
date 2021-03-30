@@ -3,7 +3,7 @@ service: cia-lambda
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs12.x
   region: eu-west-2
 
 functions:
@@ -31,6 +31,14 @@ functions:
           method: any
           cors: true
 
+  services:
+    handler: lambda.handler
+    events:
+      - http:
+          path: /api/data/services
+          method: any
+          cors: true
+
   invoices:
     handler: lambda.handler
     events:
@@ -45,6 +53,14 @@ functions:
       - http:
           path: /api/data/invoice/{id}
           method: delete
+          cors: true
+          request:
+            parameters:
+              paths:
+                id: true
+      - http:
+          path: /api/data/invoice
+          method: put
           cors: true
           request:
             parameters:

@@ -11,9 +11,6 @@ function addHeaders(response, origin) {
   };
 
   if (allowedOrigins.includes(origin)) {
-    console.error(
-      `Origin ${origin} allowed, adding Access-Control-Allow-Origin to response headers...`
-    );
     response.headers = Object.assign({}, response.headers, {
       "Access-Control-Allow-Origin": origin
     });

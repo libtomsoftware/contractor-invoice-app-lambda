@@ -1,4 +1,5 @@
 const SettingsModel = require("./models/settings");
+const ServicesModel = require("./models/services");
 const ClientModel = require("./models/client");
 const CompanyModel = require("./models/company");
 const InvoiceModel = require("./models/invoice");
@@ -15,6 +16,15 @@ module.exports = {
       price,
       vatPercentage,
       weekly
+    });
+  },
+  updateServices: newServices => {
+    const services = ServicesModel.find({
+      _id: "services"
+    });
+
+    return services.updateOne({
+      services: newServices
     });
   },
   updateClient: ({ name, address }) => {
